@@ -318,22 +318,6 @@ footer{
   </div>
 </footer>
 
-<script>
-document.querySelectorAll('a[data-pdf]').forEach(async function(link) {
-  try {
-    const response = await fetch(link.getAttribute('href'), {method:'HEAD'});
-    if (!response.ok) throw new Error('PDF not uploaded');
-  } catch (error) {
-    link.removeAttribute('href');
-    link.removeAttribute('target');
-    link.removeAttribute('rel');
-    link.textContent = 'PDF upload pending';
-    link.style.color = 'var(--muted)';
-    link.style.textDecoration = 'none';
-    link.setAttribute('aria-disabled', 'true');
-  }
-});
-</script>
 
 </body>
 </html>
