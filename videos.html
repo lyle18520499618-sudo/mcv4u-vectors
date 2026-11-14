@@ -196,7 +196,16 @@ h1{
   display:grid;
   place-items:center;
   text-align:center;
-  padding:20px;
+  padding:0;
+  overflow:hidden;
+}
+.video-box video{
+  display:block;
+  width:100%;
+  min-height:260px;
+  aspect-ratio:16 / 9;
+  background:#000;
+  object-fit:contain;
 }
 .video-info{
   border:1px solid var(--line);
@@ -301,17 +310,27 @@ footer{
 
 <main class="content">
   <div class="video-row">
-    <div class="video-box">Instructional Video 1</div>
+    <div class="video-box">
+      <video controls preload="metadata" aria-label="Vector Fundamentals and Operations">
+        <source src="videos/MCV4U_Video_1_Vector_Fundamentals_and_Operations.mp4" type="video/mp4">
+        Your browser does not support embedded video. <a href="videos/MCV4U_Video_1_Vector_Fundamentals_and_Operations.mp4">Open the video file</a>.
+      </video>
+    </div>
     <div class="video-info">
-      <h3>Video 1</h3>
-      <p>Video title, topic summary, and chapter timestamps.</p>
+      <h3>Video 1 — Vector Fundamentals and Operations</h3>
+      <p>Presented by Jack · 14:06</p>
     </div>
   </div>
   <div class="video-row">
-    <div class="video-box">Instructional Video 2</div>
+    <div class="video-box">
+      <video controls preload="metadata" aria-label="Vector Applications: Navigation">
+        <source src="videos/MCV4U_Video_2_Vector_Applications_Navigation.mp4" type="video/mp4">
+        Your browser does not support embedded video. <a href="videos/MCV4U_Video_2_Vector_Applications_Navigation.mp4">Open the video file</a>.
+      </video>
+    </div>
     <div class="video-info">
-      <h3>Video 2</h3>
-      <p>Video title, topic summary, and chapter timestamps.</p>
+      <h3>Video 2 — Vector Applications: Navigation</h3>
+      <p>Presented by Jack · 15:27</p>
     </div>
   </div>
 </main>
@@ -329,3 +348,4 @@ footer{
 
 </body>
 </html>
+
