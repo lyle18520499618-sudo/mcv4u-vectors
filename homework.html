@@ -282,10 +282,10 @@ footer{
 <header>
   <div class="nav">
     <a class="brand" href="index.html">MCV4U | Application of Vectors</a>
-    <nav class="links"><a href="index.html" class="">Home</a><a href="lessons.html" class="">Lessons</a><a href="videos.html" class="">Videos</a><a href="homework.html" class="current">Homework</a><a href="assessments.html" class="">Assessments</a><a href="final.html" class="">Final Assessment</a><a href="solutions.html" class="">Solutions</a><a href="about.html" class="">About Us</a></nav>
+    <nav class="links"><a href="index.html" class="">Home</a><a href="lessons.html" class="">Lessons</a><a href="videos.html" class="">Videos</a><a href="homework.html" class="current">Homework</a><a href="assessments.html" class="">Quiz</a><a href="final.html" class="">Final Test</a><a href="solutions.html" class="">Solutions</a><a href="about.html" class="">About Us</a></nav>
     <details class="mobile-menu">
       <summary>Menu</summary>
-      <div class="mobile-panel"><a href="index.html">Home</a><a href="lessons.html">Lessons</a><a href="videos.html">Videos</a><a href="homework.html">Homework</a><a href="assessments.html">Assessments</a><a href="final.html">Final Assessment</a><a href="solutions.html">Solutions</a><a href="about.html">About Us</a></div>
+      <div class="mobile-panel"><a href="index.html">Home</a><a href="lessons.html">Lessons</a><a href="videos.html">Videos</a><a href="homework.html">Homework</a><a href="assessments.html">Quiz</a><a href="final.html">Final Test</a><a href="solutions.html">Solutions</a><a href="about.html">About Us</a></div>
     </details>
   </div>
 </header>
@@ -301,10 +301,10 @@ footer{
 
 <main class="content">
   <div class="grid g2">
-    <div class="card"><div class="num">01</div><h3>Homework 1</h3><p>Practice set.</p></div>
-    <div class="card"><div class="num">02</div><h3>Homework 2</h3><p>Practice set.</p></div>
-    <div class="card"><div class="num">03</div><h3>Homework 3</h3><p>Practice set.</p></div>
-    <div class="card"><div class="num">04</div><h3>Homework 4</h3><p>Practice set.</p></div>
+    <div class="card"><div class="num">01</div><h3>Homework 1 — Vector Fundamentals and Operations</h3><p>Scalars, vectors, magnitude, addition, subtraction and resolution.<br><a href="pdfs/MCV4U_Homework_1_Questions.pdf" data-pdf="true" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:12px;color:var(--navy);text-decoration:underline;font-weight:600">View Questions PDF ↗</a></p></div>
+    <div class="card"><div class="num">02</div><h3>Homework 2 — Vector Applications and Navigation</h3><p>Airplane and boat navigation, river crossings and relative velocity.<br><a href="pdfs/MCV4U_Homework_2_Questions.pdf" data-pdf="true" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:12px;color:var(--navy);text-decoration:underline;font-weight:600">View Questions PDF ↗</a></p></div>
+    <div class="card"><div class="num">03</div><h3>Homework 3 — Dot Product and Its Applications</h3><p>Dot product, angles, projections, direction cosines and work.<br><a href="pdfs/MCV4U_Homework_3_Questions.pdf" data-pdf="true" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:12px;color:var(--navy);text-decoration:underline;font-weight:600">View Questions PDF ↗</a></p></div>
+    <div class="card"><div class="num">04</div><h3>Homework 4 — Cross Product and Its Applications</h3><p>Cross product, unit normals, area and torque.<br><a href="pdfs/MCV4U_Homework_4_Questions.pdf" data-pdf="true" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:12px;color:var(--navy);text-decoration:underline;font-weight:600">View Questions PDF ↗</a></p></div>
   </div>
 </main>
 
@@ -318,6 +318,23 @@ footer{
     <div>Lyle & Jack</div>
   </div>
 </footer>
+
+<script>
+document.querySelectorAll('a[data-pdf]').forEach(async function(link) {
+  try {
+    const response = await fetch(link.getAttribute('href'), {method:'HEAD'});
+    if (!response.ok) throw new Error('PDF not uploaded');
+  } catch (error) {
+    link.removeAttribute('href');
+    link.removeAttribute('target');
+    link.removeAttribute('rel');
+    link.textContent = 'PDF upload pending';
+    link.style.color = 'var(--muted)';
+    link.style.textDecoration = 'none';
+    link.setAttribute('aria-disabled', 'true');
+  }
+});
+</script>
 
 </body>
 </html>

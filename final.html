@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MCV4U | Final Assessment</title>
+<title>MCV4U | Final Test</title>
 <style>
 :root{
   --navy:#17324d;
@@ -282,10 +282,10 @@ footer{
 <header>
   <div class="nav">
     <a class="brand" href="index.html">MCV4U | Application of Vectors</a>
-    <nav class="links"><a href="index.html" class="">Home</a><a href="lessons.html" class="">Lessons</a><a href="videos.html" class="">Videos</a><a href="homework.html" class="">Homework</a><a href="assessments.html" class="">Assessments</a><a href="final.html" class="current">Final Assessment</a><a href="solutions.html" class="">Solutions</a><a href="about.html" class="">About Us</a></nav>
+    <nav class="links"><a href="index.html" class="">Home</a><a href="lessons.html" class="">Lessons</a><a href="videos.html" class="">Videos</a><a href="homework.html" class="">Homework</a><a href="assessments.html" class="">Quiz</a><a href="final.html" class="current">Final Test</a><a href="solutions.html" class="">Solutions</a><a href="about.html" class="">About Us</a></nav>
     <details class="mobile-menu">
       <summary>Menu</summary>
-      <div class="mobile-panel"><a href="index.html">Home</a><a href="lessons.html">Lessons</a><a href="videos.html">Videos</a><a href="homework.html">Homework</a><a href="assessments.html">Assessments</a><a href="final.html">Final Assessment</a><a href="solutions.html">Solutions</a><a href="about.html">About Us</a></div>
+      <div class="mobile-panel"><a href="index.html">Home</a><a href="lessons.html">Lessons</a><a href="videos.html">Videos</a><a href="homework.html">Homework</a><a href="assessments.html">Quiz</a><a href="final.html">Final Test</a><a href="solutions.html">Solutions</a><a href="about.html">About Us</a></div>
     </details>
   </div>
 </header>
@@ -294,17 +294,18 @@ footer{
 <section class="hero">
   <div class="hero-inner">
     <div class="eyebrow">Put Everything Together</div>
-    <h1>Final Assessment</h1>
-    <p class="lead">The final assessment brings together the full Application of Vectors unit and includes all four KATC categories.</p>
+    <h1>Final Test</h1>
+    <p class="lead">The final test brings together the Application of Vectors unit and all four KATC categories.</p>
   </div>
 </section>
 
 <main class="content">
+  <p class="intro">Final Test — Vectors and Their Applications (36 marks). <a href="pdfs/MCV4U_Final_Test_Questions.pdf" data-pdf="true" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:12px;color:var(--navy);text-decoration:underline;font-weight:600">View Final Test Questions PDF ↗</a></p>
   <div class="grid g4">
-    <div class="card"><div class="num">K</div><h3>Knowledge</h3><p>Core concepts and skills.</p></div>
-    <div class="card"><div class="num">A</div><h3>Application</h3><p>Using vectors in meaningful situations.</p></div>
-    <div class="card"><div class="num">T</div><h3>Thinking</h3><p>Reasoning and problem solving.</p></div>
-    <div class="card"><div class="num">C</div><h3>Communication</h3><p>Explaining mathematical thinking clearly.</p></div>
+    <div class="card"><div class="num">K</div><h3>Knowledge</h3><p>10 marks · Core concepts and skills.</p></div>
+    <div class="card"><div class="num">A</div><h3>Application</h3><p>12 marks · Using vectors in meaningful situations.</p></div>
+    <div class="card"><div class="num">T</div><h3>Thinking</h3><p>8 marks · Reasoning and problem solving.</p></div>
+    <div class="card"><div class="num">C</div><h3>Communication</h3><p>6 marks · Explaining mathematical thinking clearly.</p></div>
   </div>
 </main>
 
@@ -318,6 +319,23 @@ footer{
     <div>Lyle & Jack</div>
   </div>
 </footer>
+
+<script>
+document.querySelectorAll('a[data-pdf]').forEach(async function(link) {
+  try {
+    const response = await fetch(link.getAttribute('href'), {method:'HEAD'});
+    if (!response.ok) throw new Error('PDF not uploaded');
+  } catch (error) {
+    link.removeAttribute('href');
+    link.removeAttribute('target');
+    link.removeAttribute('rel');
+    link.textContent = 'PDF upload pending';
+    link.style.color = 'var(--muted)';
+    link.style.textDecoration = 'none';
+    link.setAttribute('aria-disabled', 'true');
+  }
+});
+</script>
 
 </body>
 </html>

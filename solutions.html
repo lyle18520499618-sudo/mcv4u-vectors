@@ -282,10 +282,10 @@ footer{
 <header>
   <div class="nav">
     <a class="brand" href="index.html">MCV4U | Application of Vectors</a>
-    <nav class="links"><a href="index.html" class="">Home</a><a href="lessons.html" class="">Lessons</a><a href="videos.html" class="">Videos</a><a href="homework.html" class="">Homework</a><a href="assessments.html" class="">Assessments</a><a href="final.html" class="">Final Assessment</a><a href="solutions.html" class="current">Solutions</a><a href="about.html" class="">About Us</a></nav>
+    <nav class="links"><a href="index.html" class="">Home</a><a href="lessons.html" class="">Lessons</a><a href="videos.html" class="">Videos</a><a href="homework.html" class="">Homework</a><a href="assessments.html" class="">Quiz</a><a href="final.html" class="">Final Test</a><a href="solutions.html" class="current">Solutions</a><a href="about.html" class="">About Us</a></nav>
     <details class="mobile-menu">
       <summary>Menu</summary>
-      <div class="mobile-panel"><a href="index.html">Home</a><a href="lessons.html">Lessons</a><a href="videos.html">Videos</a><a href="homework.html">Homework</a><a href="assessments.html">Assessments</a><a href="final.html">Final Assessment</a><a href="solutions.html">Solutions</a><a href="about.html">About Us</a></div>
+      <div class="mobile-panel"><a href="index.html">Home</a><a href="lessons.html">Lessons</a><a href="videos.html">Videos</a><a href="homework.html">Homework</a><a href="assessments.html">Quiz</a><a href="final.html">Final Test</a><a href="solutions.html">Solutions</a><a href="about.html">About Us</a></div>
     </details>
   </div>
 </header>
@@ -301,10 +301,16 @@ footer{
 
 <main class="content">
   <div class="grid g2">
-    <div class="placeholder"><strong>Homework Solutions</strong><br><br>Homework 1 to Homework 4</div>
-    <div class="placeholder"><strong>Assessment Solutions</strong><br><br>Assessment 1 to Assessment 3</div>
-    <div class="placeholder"><strong>Final Assessment Solutions</strong><br><br>Complete step-by-step solutions</div>
-    <div class="placeholder"><strong>Review Notes</strong><br><br>Helpful reminders and common mistakes</div>
+    <div class="placeholder"><strong>Homework Solutions</strong><br><br>
+      Homework 1 — Vector Fundamentals and Operations<br><a href="pdfs/MCV4U_Homework_1_Answers.pdf" data-pdf="true" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:12px;color:var(--navy);text-decoration:underline;font-weight:600">View Step-by-Step Solutions ↗</a><br><br>Homework 2 — Vector Applications and Navigation<br><a href="pdfs/MCV4U_Homework_2_Answers.pdf" data-pdf="true" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:12px;color:var(--navy);text-decoration:underline;font-weight:600">View Step-by-Step Solutions ↗</a><br><br>Homework 3 — Dot Product and Its Applications<br><a href="pdfs/MCV4U_Homework_3_Answers.pdf" data-pdf="true" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:12px;color:var(--navy);text-decoration:underline;font-weight:600">View Step-by-Step Solutions ↗</a><br><br>Homework 4 — Cross Product and Its Applications<br><a href="pdfs/MCV4U_Homework_4_Answers.pdf" data-pdf="true" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:12px;color:var(--navy);text-decoration:underline;font-weight:600">View Step-by-Step Solutions ↗</a>
+    </div>
+    <div class="placeholder"><strong>Quiz Solutions</strong><br><br>
+      Quiz 1 — Vector Fundamentals and Navigation<br><a href="pdfs/MCV4U_Quiz_1_Answers.pdf" data-pdf="true" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:12px;color:var(--navy);text-decoration:underline;font-weight:600">View Step-by-Step Solutions ↗</a><br><br>Quiz 2 — Dot Product and Its Applications<br><a href="pdfs/MCV4U_Quiz_2_Answers.pdf" data-pdf="true" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:12px;color:var(--navy);text-decoration:underline;font-weight:600">View Step-by-Step Solutions ↗</a><br><br>Quiz 3 — Cross Product and Its Applications<br><a href="pdfs/MCV4U_Quiz_3_Answers.pdf" data-pdf="true" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:12px;color:var(--navy);text-decoration:underline;font-weight:600">View Step-by-Step Solutions ↗</a>
+    </div>
+    <div class="placeholder"><strong>Final Test Solutions</strong><br><br>
+      Final Test — Vectors and Their Applications<br><a href="pdfs/MCV4U_Final_Test_Answers.pdf" data-pdf="true" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:12px;color:var(--navy);text-decoration:underline;font-weight:600">View Step-by-Step Solutions ↗</a>
+    </div>
+    <div class="placeholder"><strong>Review Notes</strong><br><br>Compare your reasoning with each typed solution and check your formula, substitution, calculation, units and conclusion.</div>
   </div>
 </main>
 
@@ -318,6 +324,23 @@ footer{
     <div>Lyle & Jack</div>
   </div>
 </footer>
+
+<script>
+document.querySelectorAll('a[data-pdf]').forEach(async function(link) {
+  try {
+    const response = await fetch(link.getAttribute('href'), {method:'HEAD'});
+    if (!response.ok) throw new Error('PDF not uploaded');
+  } catch (error) {
+    link.removeAttribute('href');
+    link.removeAttribute('target');
+    link.removeAttribute('rel');
+    link.textContent = 'PDF upload pending';
+    link.style.color = 'var(--muted)';
+    link.style.textDecoration = 'none';
+    link.setAttribute('aria-disabled', 'true');
+  }
+});
+</script>
 
 </body>
 </html>
