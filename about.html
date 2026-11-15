@@ -243,9 +243,26 @@ h1{
   font-weight:normal;
 }
 .person p{
+  margin:0;
   color:#59636b;
   line-height:1.7;
 }
+.focus-title{
+  display:block;
+  margin:22px 0 8px;
+  color:var(--gold);
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.focus-list{
+  margin:0;
+  padding-left:22px;
+  color:#59636b;
+  line-height:1.7;
+}
+.focus-list li+li{margin-top:4px}
 footer{
   background:var(--navy);
   color:#e8eef3;
@@ -304,12 +321,22 @@ footer{
     <div class="person">
       <div class="initial">L</div>
       <h3>Lyle</h3>
-      <p>Contributes to the lesson organization, practice resources, and overall learning experience.</p>
+      <p>Lyle is an MCV4U student with several years of experience studying mathematics. He has learned that focusing too heavily on marks can sometimes make the subject feel less enjoyable, while working through a difficult problem and turning confusion into understanding brings genuine satisfaction. This perspective motivates him to look for clear, approachable methods and logical explanations that help students build confidence with challenging ideas.</p>
+      <span class="focus-title">Areas of Focus</span>
+      <ol class="focus-list">
+        <li>Dot Product and Its Applications</li>
+        <li>Cross Product and Its Applications</li>
+      </ol>
     </div>
     <div class="person">
       <div class="initial">J</div>
       <h3>Jack</h3>
-      <p>Contributes to the instructional videos, lesson explanations, and supporting resources.</p>
+      <p>Jack is an MCV4U student who values simple, clear explanations. He breaks ideas into manageable steps and uses worked examples, diagrams, and plain language to show students not only how a method works, but why it works. His lessons build a strong foundation in vector operations before applying those ideas to resultant forces and navigation problems involving aircraft and boats.</p>
+      <span class="focus-title">Areas of Focus</span>
+      <ol class="focus-list">
+        <li>Vector Fundamentals and Operations</li>
+        <li>Vector Applications: Navigation</li>
+      </ol>
     </div>
   </div>
 </main>
